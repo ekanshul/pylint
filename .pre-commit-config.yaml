@@ -1,7 +1,7 @@
 ci:
   # Hooks that need a working pylint installation are run in the 'pylint'
   # continuous integration job instead
-  skip: [pylint, check-message-references]
+  skip: [pylint, check-doc-references]
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -128,9 +128,9 @@ repos:
         types: [text]
         files: ^(doc/whatsnew/fragments)
         exclude: doc/whatsnew/fragments/_.*.rst
-      - id: check-message-references
-        name: Check message references
-        entry: python3 -m script.check_message_references
+      - id: check-doc-references
+        name: Check doc references
+        entry: python3 -m script.check_doc_references
         language: system
         types: [text]
         files: ^doc/.*\.rst$|^doc/whatsnew/fragments/
